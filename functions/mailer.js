@@ -1,13 +1,13 @@
 var express = require("express");
-var router = express.Router();
+var mailerRouter  = express.Router ();
 
 /* GET home page. */
-router.get("/", function(req, res, next) {
+mailerRouter.get("/", function(req, res, next) {
   res.render("Express" );
 
 });
 
-router.post("/", function(req, res, next) {
+mailerRouter.post("/", function(req, res, next) {
  
 
   function sendEmailFromApi () {
@@ -51,4 +51,4 @@ router.post("/", function(req, res, next) {
   
 });
 
-module.exports = router;
+module.exports = mailerRouter ;

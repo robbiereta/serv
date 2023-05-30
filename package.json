@@ -15,7 +15,7 @@
     "@webpack-cli/serve": "^2.0.4",
     "babel-loader": "^9.1.2",
     "esbuild-loader": "^3.0.1",
-    "netlify-cli": "^15.1.1",
+    "netlify-cli": "^15.2.0",
     "webpack": "latest",
     "webpack-cli": "latest",
     "webpack-dev-server": "^4.15.0"

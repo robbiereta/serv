@@ -2,13 +2,14 @@ import express, { Router } from 'express';
 import cors from "cors";
 import bodyParser from "body-parser";
 import compression from "compression";
+import mailerRouter  from "./mailer";
 
 export default function expressApp(functionName) {
 
   const app = express()
   const port = 3000
   
-  var mailerRouter = require("./mailer");
+  
 
   const router = Router();
   router.use(cors());
