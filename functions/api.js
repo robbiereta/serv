@@ -8,9 +8,6 @@ export default function expressApp(functionName) {
 
   const app = express()
   const port = 3000
-  
-  
-
   const router = Router();
   router.use(cors());
   router.use(compression());
