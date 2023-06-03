@@ -36,8 +36,8 @@ mailerRouter.post("/", function(req, res, next) {
         from: '"r" <bici.vic2@zohomail.com>', // sender address
         to: "robbie.reta67@gmail.com", // list of receivers
         subject: "Solicitud de cotizacion", // Subject line
-        text: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod, // plain text body
-        html: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod, // html body
+        text: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod+"de"+req.body.moto+ " "+req.body.anio + " "+req.body.color + "datos del cliente:"+req.body.nombre +"telefono" +req.body.telefono, // plain text body
+        html: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod+"de"+req.body.moto+ " "+req.body.anio + " "+req.body.color + "datos del cliente:"+req.body.nombre +"telefono" +req.body.telefono, // html body
       });
     
       console.log("Message sent: %s", info.messageId);
