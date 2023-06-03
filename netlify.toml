@@ -2,3 +2,7 @@
 command= "npm run cons"
 publish="dist"
 functions="functions"
+
+[context.branch-deploy.environment]
+USR="bici.vic2@zohomail.com"
+PWD="73y-RDCvc*#7eR8"

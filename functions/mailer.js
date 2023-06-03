@@ -12,6 +12,7 @@ mailerRouter.post("/", function(req, res, next) {
 
   function sendEmailFromApi () {
     "use strict";
+   // remove this after you've confirmed it is working
     const nodemailer = require("nodemailer");
     
     // async..await is not allowed in global scope, must use a wrapper
@@ -26,15 +27,15 @@ mailerRouter.post("/", function(req, res, next) {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user: "bici.vic2@zohomail.com", // generated ethereal user
-          pass: "73y-RDCvc*#7eR8", // generated ethereal password
+          user: process.env.USR,
+          pass: process.env.PWD, 
         },
       });
     
       // send mail with defined transport object
       let info = await transporter.sendMail({
-        from: '"r" <bici.vic2@zohomail.com>', // sender address
-        to: "robbie.reta67@gmail.com", // list of receivers
+        from: '"Cotizaciones" <bici.vic2@zohomail.com>', // sender address
+        to: "bici.vic2@gmail.com", // list of receivers
         subject: "Solicitud de cotizacion", // Subject line
         text: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod+"de"+req.body.moto+ " "+req.body.anio + " "+req.body.color + "datos del cliente:"+req.body.nombre +"telefono" +req.body.telefono, // plain text body
         html: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod+"de"+req.body.moto+ " "+req.body.anio + " "+req.body.color + "datos del cliente:"+req.body.nombre +"telefono" +req.body.telefono, // html body
