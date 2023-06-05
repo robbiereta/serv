@@ -27,15 +27,15 @@ mailerRouter.post("/", function(req, res, next) {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user: process.env.USR,
-          pass: process.env.PWD, 
+          user:"bici.vic2@zohomail.com",
+          pass: "73y-RDCvc*#7eR8"
         },
       });
     
       // send mail with defined transport object
       let info = await transporter.sendMail({
         from: '"Cotizaciones" <bici.vic2@zohomail.com>', // sender address
-        to: "	robbie.reta67@gmail.com", // list of receivers
+        to: "bici.vic2@gmail.com", // list of receivers
         subject: "Solicitud de cotizacion", // Subject line
         text: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod+"de"+req.body.moto+ " "+req.body.anio + " "+req.body.color + "datos del cliente:"+req.body.nombre +"telefono" +req.body.telefono, // plain text body
         html: "Un cliente solicito un presupuesto de lo siguiente:"+req.body.prod+"de"+req.body.moto+ " "+req.body.anio + " "+req.body.color + "datos del cliente:"+req.body.nombre +"telefono" +req.body.telefono, // html body
