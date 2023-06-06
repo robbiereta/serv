@@ -4,15 +4,17 @@ var mailerRouter  = express.Router ();
 /* GET home page. */
 mailerRouter.get("/", function(req, res, next) {
   res.render("Express");
-  console.log(process.env.USR + ":" + process.env.PASS)
+  console.log(process.env.USR + ":" + process.env.PWD)
 });
 
 mailerRouter.post("/", function(req, res, next) {
  
 
   function sendEmailFromApi () {
+
     "use strict";
-   // remove this after you've confirmed it is working
+    require('dotenvenc').decrypt();
+    // remove this after you've confirmed it is working
     const nodemailer = require("nodemailer");
     
     // async..await is not allowed in global scope, must use a wrapper
@@ -28,7 +30,7 @@ mailerRouter.post("/", function(req, res, next) {
         secure: true, // true for 465, false for other ports
         auth: {
           user:process.env.USR,
-          pass: "73y-RDCvc*#7eR8"
+          pass: process.env.PWD,
         },
       });
     
