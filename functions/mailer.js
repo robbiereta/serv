@@ -4,7 +4,7 @@ var mailerRouter  = express.Router ();
 /* GET home page. */
 mailerRouter.get("/", function(req, res, next) {
   res.render("Express");
-
+  
 });
 
 mailerRouter.post("/", function(req, res, next) {
@@ -27,7 +27,7 @@ mailerRouter.post("/", function(req, res, next) {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user:"bici.vic2@zohomail.com",
+          user:process.env.USR,
           pass: "73y-RDCvc*#7eR8"
         },
       });
