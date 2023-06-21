@@ -4,7 +4,7 @@ var mailerRouter  = express.Router ();
 /* GET home page. */
 mailerRouter.get("/", function(req, res, next) {
   res.render("Express");
-  console.log(process.env.USR + ":" + process.env.PWD)
+  console.log(process.env.USR + ":" + process.env.MAIL_PASS)
 });
 
 mailerRouter.post("/", function(req, res, next) {
@@ -30,7 +30,7 @@ mailerRouter.post("/", function(req, res, next) {
         secure: true, // true for 465, false for other ports
         auth: {
           user:process.env.USR,
-          pass: process.env.PWD,
+          pass: process.env.MAIL_PASS
         },
       });
     
